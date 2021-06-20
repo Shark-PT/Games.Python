@@ -1,17 +1,17 @@
 
 inventario = []
 def start():
-    print("Bem Vindo á MASMORRA DA MORTE")
+    print(" Bem Vindo á MASMORRA DA MORTE")
     print("\nComo the chamas?")
     nome = input(">")
     print("Bem vindo, ", nome)
-    print("Na tua frente tens uns portões ferruguentos que aparentam ter centenas de anos desde que foram abertos")
+    print("\nNa tua frente tens uns portões ferruguentos que aparentam ter centenas de anos desde que foram abertos")
     print("que misterios, lendas, monstros e tesouros se escondem lá dentro")
     print("Tens coragem de abrir? (sim/não)")
     resposta = input(">")
     
     
-    if "s" in resposta.lower:
+    if "s" in resposta.lower():
         entrada_principal()
     else:
         game_over("Nunca saberás que riquezas se escondem dentro desta masmorra!!")
@@ -24,17 +24,26 @@ def entrada_principal():
     
     resposta = input(">")
     
-    if "s" in resposta.lower:
-        print("encontras uma adaga antiga e decides guarda-la")
-        inventario.append["adaga"]
+    if "s" in resposta.lower():
+        print("\nencontras uma adaga antiga e decides guarda-la")
+        inventario.append("adaga")
+        print("Continuas a vasculhar a entrada e vês dois caminhos")
+        print("Vais para a direita ou esquerda?(direita/esquerda")
+        cruzamento = input(">")
         
     else:
-        print("Continuas a vasculhar a entrada e vês dois caminhos")
+        print("\nContinuas a vasculhar a entrada e vês dois caminhos")
         print("Vais para a direita ou esquerda?(direita/esquerda")
         cruzamento = input(">")
 
     if "d" in cruzamento:
-        print("")                                                               <
+        print("\nOlhas pelo tunel sombrio e pensas no que te estás a meter")
+        print("Após um periodo de habituação, vês um caminho àa tua direita")
+        print("Queres ir pelo caminho da esquerda ou vais em frente?(frente/esquerda)")
+        caminho = input(">")
     
+    else:
+        print("\nDecidiste ir pelo caminho da esquerda")
+        print("")
     
 start()
