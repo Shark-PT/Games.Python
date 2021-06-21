@@ -10,6 +10,8 @@ code1Location = random.randint(1,3)
 code2Location = random.randint(4,6)
 code3Location = random.randint(7,9)
 
+
+#introdução do jogo
 def intro():
     print("Last night, you went to sleep in your own home.")
     print("Now, you wake up to an unfamiliar environment.")
@@ -19,6 +21,7 @@ def intro():
     print("1 - to check under the bed")
     print("2 - to check the table")
     
+    #Escolher a primeira opção de input
     while True:
         bedOrWall = input()
         
@@ -35,6 +38,8 @@ def intro():
             
         except:
             print("Value must be whole number 1 or 2:")
+            
+    #Continuação da intro
     print("\n")
     print("The note reads:")
     print("My dearest participant,")
@@ -46,6 +51,8 @@ def intro():
     print("\n")
     print("You examine the room and see:")     
     
+
+#script para o menu do jogo
 def menu(list, question):
         for item in list:
             print(list.index(item), item)
@@ -104,107 +111,107 @@ def Window(choice, codeLocation, codeValue):
     print("")
     print("You look at the windows. It's dark, and damp. Mold grows along the edges and you cannot see through its musty panes.")
     if choice == codeLocation:
-        print("Carved into the edging, you see the number " +str(codeValue) + ".")
+        print("\nCarved into the edging, you see the number " +str(codeValue) + ".")
         print("")
     
     else:
-        print("You find no code.")
+        print("\nYou find no code.")
         print("")          
 
 
 def Backpack(choice, codeLocation, codeValue):
     print("")
-    print("The backpack is your personnel bag. Strange, you though you lost it weeks ago.")
+    print("\nThe backpack is your personnel bag. Strange, you though you lost it weeks ago.")
     if choice == codeLocation:
         print("Within the front pocket, you see the number " +str(codeValue) + "written on a crumpled note.")
         print("")
         
     else:
-        print("You find no code.")
+        print("\nYou find no code.")
         print("")
         
         
 def Vase(choice, codeLocation, codeValue):
     print("")
-    print("A dark blue vase holds roses that seems to have died long ago.")
+    print("\nA dark blue vase holds roses that seems to have died long ago.")
     if choice == codeLocation:
-        print("On the base, you see the number " +str(codeValue) + ".")
+        print("\nOn the base, you see the number " +str(codeValue) + ".")
         print("")
         
     else:
-        print("You find no code.")
+        print("\nYou find no code.")
         print("")
         
         
 def Bucket(choice, codeLocation, codeValue):
     print("")
-    print("The bucket sits in the middsle of the floor. It catches a gentle leak from the dank ceiling")
+    print("\nThe bucket sits in the middsle of the floor. It catches a gentle leak from the dank ceiling")
     if choice == codeLocation:
-        print("Within, you see exactly " +str(codeValue) + ".")
+        print("\nWithin, you see exactly " +str(codeValue) + ".")
         print("")
         
     else:
-        print("You find no code.")
+        print("\nYou find no code.")
         print("")
         
         
 def Painting(choice, codeLocation, codeValue):
     print("")
-    print("Has Mona lisa allways been this creepy? Her eyes peer into you, her smile gleams as if she knows the fate that awaits you unless you find the code.")
+    print("\nHas Mona lisa allways been this creepy? Her eyes peer into you, her smile gleams as if she knows the fate that awaits you unless you find the code.")
     if choice == codeLocation:
-        print("Painted in the corner, you see the number " +str(codeValue) + ".")
+        print("\nPainted in the corner, you see the number " +str(codeValue) + ".")
         print("")
         
     else:
-        print("You find no code.")
+        print("\nYou find no code.")
         print("")
         
         
 def JewelryBox(choice, codeLocation, codeValue):
     print("")
-    print("The oak Jewelry Box creeks open and gentle music fills the room. The music may have once been soothing, but years of age has ruined this once peaceful melody")
+    print("\nThe oak Jewelry Box creeks open and gentle music fills the room. The music may have once been soothing, but years of age has ruined this once peaceful melody")
     if choice == codeLocation:
-        print("Etched inside the lid, you see the number  " +str(codeValue) + ".")
+        print("\nEtched inside the lid, you see the number  " +str(codeValue) + ".")
         print("")
         
     else:
-        print("You find no code.")
+        print("\nYou find no code.")
         print("")
         
         
 def Rug(choice, codeLocation, codeValue):
     print("")
-    print("A dusty woven rug adorns the otherwise ragged wooden floor, adding a hint of color to the eery room")
+    print("\nA dusty woven rug adorns the otherwise ragged wooden floor, adding a hint of color to the eery room")
     if choice == codeLocation:
-        print("Etched inside the lid, you see the number  " +str(codeValue) + ".")
+        print("\nEtched inside the lid, you see the number  " +str(codeValue) + ".")
         print("")
         
     else:
-        print("You find no code.")
+        print("\nYou find no code.")
         print("")
         
         
 def Mirror(choice, codeLocation, codeValue):
     print("")
-    print("The mirror is grimey and unpleasent. The unnatural reflection leers back at you. The circlesunder your eyes are dark and full. It offers little comfort")
+    print("\nThe mirror is grimey and unpleasent. The unnatural reflection leers back at you. The circlesunder your eyes are dark and full. It offers little comfort")
     if choice == codeLocation:
-        print("As you study your reflection, you notice the number " +str(codeValue) + "painted onto your shirt.")
+        print("\nAs you study your reflection, you notice the number " +str(codeValue) + " painted onto your shirt.")
         print("")
         
     else:
-        print("You find no code.")
+        print("\nYou find no code.")
         print("")
   
   
 def Bookshelf(choice, codeLocation, codeValue):
     print("")
-    print("The mirror is grimey and unpleseant. The unnatural reflection leers back at you. The circles under your eyes are dark and full. It offers little comfort.")
+    print("\nA bookshelf filled with old, unkempt books. It is sad to see them so rundown.")
     if choice == codeLocation:
-        print("As you study your reflection, you notice the number " + str(codeValue) + " painted onto your shirt.")
+        print("\nYou notice the books are all the same volume. The volume number is " + str(codeValue) + ".")
         print("")
     
     else:
-        print("You find no code.")
+        print("\nYou find no code.")
         print("")
         
         
