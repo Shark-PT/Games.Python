@@ -46,4 +46,16 @@ def entrada_principal():
         print("\nDecidiste ir pelo caminho da esquerda")
         print("")
     
+    if "e" in caminho:
+        monstro1()
+        
+    else:
+        print("\nO caminho está bolorento e escuro e imaginas os horrores que terão passado nestes caminhos")
+        print("ves que o caminho vira à direita e continuas até chegar a uma intersecção.")
+        print("Queres seguir em frente ou virar à esquerda?(Frente/Esquerda")
+        
+
+
+
+
 start()
