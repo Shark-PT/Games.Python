@@ -4,7 +4,7 @@ def game():
     aproach = ["s","n"]
     resposta = input("Queres jogar o jogo? (s/n)")
                   
-    if resposta.lower() == 'y':
+    if resposta.lower() == 's':
         print("Bem-vindo ao cataclismo")
         start=True
         inventory=[]
@@ -40,7 +40,6 @@ def game():
         
     elif choiceY1==True:
         print("Vamos lá rapaz, segue-me até ao parque. Há uma coisa importante para te mostrar lá e que te irá ajudar na tua viagem.")
-        print("Oh, hold up, that there is dange dan, he likes to fight people with his mind and you should fight him")
         print("Oh, aguenta, está ali o Danger Dan. Ele gosta de lutar com pessoas com a mente e tu devias treinar com ele.")
         aproach=input("Tu aproximas-te do Danger Dan?(s/n)")
     
