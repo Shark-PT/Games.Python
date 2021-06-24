@@ -48,13 +48,46 @@ def game():
         print("GAME OVER")   
         
     elif decide == "esquerda":
-        aproach1=input("You are at a park and someone wants to fight you, do you approach him?(s/n")
+        aproach1=input("Tu estas no parque e alguem quer lutar contigo. Vais lutar?(s/n")
     
     
-    """    para continuar
+        
     if aproach1.lower() == "s":
-        print("") 
-     """    
+        print("***--- Estás numa luta. Tu vais?: ---***")
+        print("***--- A: Dar-lhe um soco? Sucesso: 66%")
+        print("***--- B: Dar-lhe um pontapé? Sucesso: 33%")
+        print("***--- Usar a Soqueira? Sucesso: 88%")
+        decision= input("O que vais escolher: A,B,C?")
+        
+        minPoint=1
+        maxPoint=100
+        
+        ChA = (random.randint(minPoint, maxPoint))*.66
+        ChB = (random.randint(minPoint, maxPoint))*.33
+        ChC = (random.randint(minPoint, maxPoint))*.88
+        
+        if decision.upper() == "A" and ChA > 25:
+            print("Tu decidiste dar-lhe um soco")
+            print("Ele aterrou no chão")
+            print("Revistas-lo e encontras uma navalha")
+            inventory.append("navalha")
+            
+        elif decision.upper() == "B" and ChB > 25:
+            print("Tu decidiste dar-lhe um pontapé")
+            print("Ele aterrou no chão")
+            print("Revistas-lo e encontras uma navalha")
+            inventory.append("navalha")
+            
+        elif decision.upper() == "C" and ChC > 25 and "Soqueira" in inventory:
+            print("Tu usaste a Soqueira")
+            print("Deste-lhe uma enorme coça")
+            print("Revistas-lo e encontras uma navalha")
+            inventory.append("navalha")
+            
+        else:
+            print("Não conseguiste acertar e perdeste a luta")
+            print("Game Over")
+         
     if aproach =="n":
         print("És um cobarde.")
         print("game over")    
@@ -88,5 +121,7 @@ def game():
         else:
             print("Não conseguiste acertar e perdeste a luta")
             print("Game Over")
+    
+    
     
 game()
