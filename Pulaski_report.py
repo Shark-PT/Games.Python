@@ -49,6 +49,7 @@ def game():
         
     elif decide == "esquerda":
         aproach1=input("Tu estas no parque e alguem quer lutar contigo. Vais lutar?(s/n")
+        
     
     
         
@@ -123,5 +124,8 @@ def game():
             print("Game Over")
     
     
-    
+def predio():
+    print("entras num predio abandonado")
+    #TODO
+        
 game()
