@@ -51,6 +51,7 @@ def entrada_principal():
     
         if "e" in caminho:
             monstro("ogre")
+            sala_ogre()
         
         else:
             print("\nO caminho está bolorento e escuro e imaginas os horrores que terão passado nestes caminhos")
@@ -94,16 +95,25 @@ def monstro(monstro):
     if decision.upper() == "A" and ChA > 25:
         print("Tu decidiste dar-lhe um soco")
         print("Ele aterrou no chão")
+        return 1
             
     elif decision.upper() == "B" and ChB > 25:
         print("Tu decidiste dar-lhe um pontapé")
         print("Ele aterrou no chão")
+        return 1
             
     elif decision.upper() == "C" and ChC > 25 and "Soqueira" in inventario:
         print("Tu usaste a Adaga")
         print("Deste-lhe uma enorme coça")
+        return 1
             
     else:
         game_over("morreste")
+        
+        
+def sala_ogre():
+    print("mataste o ogre e revistas o corpo.")
+    print("Encontraste uma tocha que te irá ajudar a ver os caminhos")
+    print("Voltas atrás e segues o teu caminho")
             
 start()
