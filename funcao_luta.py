@@ -8,7 +8,7 @@ def monstro(monstro, local):
     print("***--- B: Dar-lhe um soco? Sucesso: 85%")
     print("***--- C: Dar-lhe um pontapé? Sucesso: 33%")
     print("***--- D: Usar uma arma do inventario? Sucesso: 95%")
-    decision= input("O que vais escolher: A,B,C?")
+    decision= input("O que vais escolher: A,B,C ou D?")
         
     minPoint=1
     maxPoint=100
@@ -24,24 +24,29 @@ def monstro(monstro, local):
     if decision.upper() == "B" and ChB > 25:
         print("Tu decidiste dar-lhe um soco")
         print("Ele aterrou no chão")
-        local()
+        ir_para("local")
         return 1
             
     elif decision.upper() == "C" and ChC > 25:
         print("Tu decidiste dar-lhe um pontapé")
         print("Ele aterrou no chão")
-        local()
+        ir_para("local")
         return 1
             
     elif decision.upper() == "D" and ChD > 25 and "adaga" in inventario:
         print("Tu usaste a Adaga")
         print("Deste-lhe uma enorme coça")
-        local()
+        ir_para("local")
         
         return 1
             
     else:
         game_over("morreste")
+        
+        
+def ir_para(local):
+    if (local == "sala3"):
+        sala3()
         
         
 def sala3():
@@ -59,7 +64,7 @@ def play_again():
     resposta = input(">").lower()
     
     if "s" in resposta:
-        intro()
+        monstro("ogre", "sala3")
     
     else:
         print("ADEUS")
