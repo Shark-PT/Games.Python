@@ -24,7 +24,7 @@ def intro():
         
     
 def entrada_principal():
-    while True:
+    
         print("\nAbriste com esforço os portões ferrugentos.")
         print("Observas com horror, os restos de aventureiros tombados pelo chão")
         print("Queres revistar os corpos para ve se tem alguma coisa util?(sim/não)")
@@ -58,6 +58,22 @@ def sala_ogre():
     
     if resposta == "1":
         monstro("Ogre","sala3")
+    
+    else:
+        sortemin = 1
+        sortemax = 100
+        hipotese = (random.randint(sortemin, sortemax))*.75
+        
+        if hipotese > 60:
+            print("\nTu conseguiste passar pelo ogre a dormir")
+            ir_para("sala3")
+            
+        elif hipotese > 25 and hipotese < 60:
+            print("\nEle acordou e vais ter que lutar com ele")
+            monstro("Ogre", "sala3")
+            
+        else:
+            game_over("\nO Ogre acordou e atacou-te pelas costas. Nunca tiveste hipotese")
         
             
 def monstro(monstro, local):
@@ -110,7 +126,16 @@ def ir_para(local):
 
 
 def sala3():
-    print("Ipsum ipsum continuar")
+    print("\nConseguiste ultrapassar o Ogre e passaste para uma sala nova.")
+    print("Olhas para o chão e vês moedas de ouro espalhadas")
+    print("Achas estranho, mas vais querer apanha-las?(sim/não)")
+    resposta = input(">")
+    
+    if "s" in resposta.lower():
+        print("ipsum ipsum TODO")
+        
+    else:
+        print("Ipsum TODO TODO")
 
 def game_over(reason):
     print("\n" + reason)
