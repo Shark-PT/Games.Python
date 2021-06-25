@@ -7,21 +7,20 @@ inventario = []
 
 def intro():
     
-    while True:
-        print(" Bem Vindo á MASMORRA DA MORTE")
-        print("\nComo the chamas?")
-        nome = input(">")
-        print("Bem vindo, ", nome)
-        print("\nNa tua frente tens uns portões ferruguentos que aparentam ter centenas de anos desde que foram abertos")
-        print("que misterios, lendas, monstros e tesouros se escondem lá dentro")
-        print("Tens coragem de abrir? (sim/não)")
-        resposta = input(">")
+    print(" Bem Vindo á MASMORRA DA MORTE")
+    print("\nComo the chamas?")
+    nome = input(">")
+    print("Bem vindo, ", nome)
+    print("\nNa tua frente tens uns portões ferruguentos que aparentam ter centenas de anos desde que foram abertos")
+    print("que misterios, lendas, monstros e tesouros se escondem lá dentro")
+    print("Tens coragem de abrir? (sim/não)")
+    resposta = input(">")
     
     
-        if "s" in resposta.lower():
-            entrada_principal()
-        else:
-            game_over("Nunca saberás que riquezas se escondem dentro desta masmorra!!")
+    if "s" in resposta.lower():
+        entrada_principal()
+    else:
+        game_over("Nunca saberás que riquezas se escondem dentro desta masmorra!!")
         
     
 def entrada_principal():
@@ -58,21 +57,15 @@ def sala_ogre():
     resposta = input(">")
     
     if resposta == "1":
-        monstro("Ogre", " sala3")
+        monstro("Ogre","sala3")
         
             
-    
-        
-def sala3():
-    print("Ipsum ipsum continuar")
-    
-    
 def monstro(monstro, local):
     print("***--- Estás numa luta contra um " + monstro)
     print(". Tu vais?: ---***")
     print("***--- A: Ver o inventario ")
     print("***--- B: Dar-lhe um soco? Sucesso: 85%")
-    print("***--- C: Dar-lhe um pontapé? Sucesso: 33%")
+    print("***--- C: Dar-lhe um pontapé? Sucesso: 75%")
     print("***--- D: Usar uma arma do inventario? Sucesso: 95%")
     decision= input("O que vais escolher: A,B,C ou D?")
         
@@ -80,7 +73,7 @@ def monstro(monstro, local):
     maxPoint=100
         
     ChB = (random.randint(minPoint, maxPoint))*.85
-    ChC = (random.randint(minPoint, maxPoint))*.33
+    ChC = (random.randint(minPoint, maxPoint))*.75
     ChD = (random.randint(minPoint, maxPoint))*.95
     
     if "a" in decision.lower():
@@ -88,23 +81,22 @@ def monstro(monstro, local):
                     print(x) 
     
     if decision.upper() == "B" and ChB > 25:
-        print("Tu decidiste dar-lhe um soco")
+        print("\nTu decidiste dar-lhe um soco")
         print("Ele aterrou no chão")
         ir_para(local)
-        return 1
+        
             
     elif decision.upper() == "C" and ChC > 25:
-        print("Tu decidiste dar-lhe um pontapé")
+        print("\nTu decidiste dar-lhe um pontapé")
         print("Ele aterrou no chão")
         ir_para(local)
-        return 1
+        
             
     elif decision.upper() == "D" and ChD > 25 and "adaga" in inventario:
-        print("Tu usaste a Adaga")
+        print("\nTu usaste a Adaga")
         print("Deste-lhe uma enorme coça")
         ir_para(local)
         
-        return 1
             
     else:
         game_over("morreste")
@@ -112,9 +104,14 @@ def monstro(monstro, local):
         
 def ir_para(local):
     if (local == "sala3"):
-        sala3()
+        sala3()    
         
- 
+
+
+
+def sala3():
+    print("Ipsum ipsum continuar")
+
 def game_over(reason):
     print("\n" + reason)
     print("Game Over!")
