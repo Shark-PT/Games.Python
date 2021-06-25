@@ -24,19 +24,19 @@ def monstro(monstro, local):
     if decision.upper() == "B" and ChB > 25:
         print("Tu decidiste dar-lhe um soco")
         print("Ele aterrou no chão")
-        ir_para("local")
+        ir_para(local)
         return 1
             
     elif decision.upper() == "C" and ChC > 25:
         print("Tu decidiste dar-lhe um pontapé")
         print("Ele aterrou no chão")
-        ir_para("local")
+        ir_para(local)
         return 1
             
     elif decision.upper() == "D" and ChD > 25 and "adaga" in inventario:
         print("Tu usaste a Adaga")
         print("Deste-lhe uma enorme coça")
-        ir_para("local")
+        ir_para(local)
         
         return 1
             
@@ -49,25 +49,6 @@ def ir_para(local):
         sala3()
         
         
-def sala3():
-    print("Ipsum ipsum continuar")
+
     
             
-def game_over(reason):
-    print("\n" + reason)
-    print("Game Over!")
-    play_again()
-    
-def play_again():
-    print("\nQueres jogar novamente? (sim/não)")
-    
-    resposta = input(">").lower()
-    
-    if "s" in resposta:
-        monstro("ogre", "sala3")
-    
-    else:
-        print("ADEUS")
-        exit()
-    
-monstro("ogre", "sala3")

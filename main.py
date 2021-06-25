@@ -1,4 +1,5 @@
 import random
+from funcao_luta import monstro
 
 
 inventario = []
@@ -57,65 +58,23 @@ def sala_ogre():
     resposta = input(">")
     
     if resposta == "1":
-        print("***--- Estás numa luta contra um ogre.")
-        print(" Tu vais?: ---***")
-        print("***--- A: Ver o inventario ")
-        print("***--- B: Dar-lhe um soco? Sucesso: 85%")
-        print("***--- C: Dar-lhe um pontapé? Sucesso: 33%")
-        print("***--- D: Usar uma arma do inventario? Sucesso: 95%")
-        decision= input("O que vais escolher: A,B,C?")
+        monstro("Ogre", " sala3")
         
-        minPoint=1
-        maxPoint=100
-        
-        ChB = (random.randint(minPoint, maxPoint))*.85
-        ChC = (random.randint(minPoint, maxPoint))*.33
-        ChD = (random.randint(minPoint, maxPoint))*.95
-    
-        while "a" in decision.lower():
-            for x in inventario:
-                print(x)
-                print("***--- B: Dar-lhe um soco? Sucesso: 85%")
-                print("***--- C: Dar-lhe um pontapé? Sucesso: 33%")
-                print("***--- D: Usar uma arma do inventario? Sucesso: 95%")
-                decision= input("O que vais escolher: A,B,C?") 
-    
-        if decision.upper() == "B" and ChB > 25:
-            print("Tu decidiste dar-lhe um soco")
-            print("Ele aterrou no chão")
-            sala3()
-            return 1
-            
-        elif decision.upper() == "C" and ChC > 25:
-            print("Tu decidiste dar-lhe um pontapé")
-            print("Ele aterrou no chão")
-            sala3()
-            return 1
-            
-        elif decision.upper() == "D" and ChD > 25 and "adaga" in inventario:
-            print("Tu usaste a Adaga")
-            print("Deste-lhe uma enorme coça")
-            sala3()
-            return 1
-            
-        else:
-            game_over("morreste")
             
     
         
 def sala3():
-    print("")
+    print("Ipsum ipsum continuar")
     
     
-""""
-def monstro(monstro):
+def monstro(monstro, local):
     print("***--- Estás numa luta contra um " + monstro)
     print(". Tu vais?: ---***")
     print("***--- A: Ver o inventario ")
     print("***--- B: Dar-lhe um soco? Sucesso: 85%")
     print("***--- C: Dar-lhe um pontapé? Sucesso: 33%")
     print("***--- D: Usar uma arma do inventario? Sucesso: 95%")
-    decision= input("O que vais escolher: A,B,C?")
+    decision= input("O que vais escolher: A,B,C ou D?")
         
     minPoint=1
     maxPoint=100
@@ -131,23 +90,31 @@ def monstro(monstro):
     if decision.upper() == "B" and ChB > 25:
         print("Tu decidiste dar-lhe um soco")
         print("Ele aterrou no chão")
+        ir_para(local)
         return 1
             
     elif decision.upper() == "C" and ChC > 25:
         print("Tu decidiste dar-lhe um pontapé")
         print("Ele aterrou no chão")
+        ir_para(local)
         return 1
             
     elif decision.upper() == "D" and ChD > 25 and "adaga" in inventario:
         print("Tu usaste a Adaga")
         print("Deste-lhe uma enorme coça")
+        ir_para(local)
+        
         return 1
             
     else:
         game_over("morreste")
-        """
         
         
+def ir_para(local):
+    if (local == "sala3"):
+        sala3()
+        
+ 
 def game_over(reason):
     print("\n" + reason)
     print("Game Over!")
