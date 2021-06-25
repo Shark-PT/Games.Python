@@ -47,6 +47,10 @@ def entrada_principal():
         if "d" in cruzamento:
             sala_ogre()
             
+        elif "e" in cruzamento:
+            print("CONTINUA")
+            
+            
                 
             
 def sala_ogre():
@@ -75,6 +79,30 @@ def sala_ogre():
         else:
             game_over("\nO Ogre acordou e atacou-te pelas costas. Nunca tiveste hipotese")
         
+def sala3():
+    print("\nConseguiste ultrapassar o Ogre e passaste para uma sala nova.")
+    print("Olhas para o chão e vês moedas de ouro espalhadas")
+    print("Achas estranho, mas vais querer apanha-las?(sim/não)")
+    resposta = input(">")
+    
+    if "s" in resposta.lower():
+        print("Apanhaste as moedas do chão e ficaste com 5 moedas de ouro.")
+        print("Olhas em frente e vês que tem dois caminhos.")
+        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
+        inventario.append("Moedas de Ouro")
+        caminho = input(">")
+        
+        
+    else:
+        print("Ignoras as moedas e olhas em frente e vês que tem dois caminhos.")
+        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
+        caminho = input(">")
+        
+    if "d" in caminho:
+        sala4()
+        
+    else:
+        sala5()
             
 def monstro(monstro, local):
     print("***--- Estás numa luta contra um " + monstro)
@@ -132,10 +160,31 @@ def sala3():
     resposta = input(">")
     
     if "s" in resposta.lower():
-        print("ipsum ipsum TODO")
+        print("Apanhaste as moedas do chão e ficaste com 5 moedas de ouro.")
+        print("Olhas em frente e vês que tem dois caminhos.")
+        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
+        inventario.append("Moedas de Ouro")
+        caminho = input(">")
+        
         
     else:
-        print("Ipsum TODO TODO")
+        print("Ignoras as moedas e olhas em frente e vês que tem dois caminhos.")
+        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
+        caminho = input(">")
+        
+    if "d" in caminho.lower():
+        sala4()
+        
+    else:
+        sala5()
+        
+        
+def sala4():
+    print("Ipsum TODO")
+    
+def sala5():
+    print("IPsum TODO")
+        
 
 def game_over(reason):
     print("\n" + reason)

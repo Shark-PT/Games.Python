@@ -1,4 +1,4 @@
-#Inicio do jogo
+<aaaaaaaz211\q  q   q   q   q   q                                           #Inicio do jogo
 def start():
     print("\nYou are standing in a dark room.")
     print("There is a door to your left and right, wich one do you choose?")
