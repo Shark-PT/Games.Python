@@ -64,15 +64,13 @@ def sala_ogre():
         monstro("Ogre","sala3", "60", "75", "90")
     
     else:
-        sortemin = 1
-        sortemax = 100
-        hipotese = (random.randint(sortemin, sortemax))*.75
+        sorte("60")
         
-        if hipotese > 60:
+        if sorte > 60:
             print("\nTu conseguiste passar pelo ogre a dormir")
             ir_para("sala3")
             
-        elif hipotese > 25 and hipotese < 60:
+        elif sorte > 25 and sorte < 60:
             print("\nEle acordou e vais ter que lutar com ele")
             monstro("Ogre", "sala3")
             
@@ -138,11 +136,9 @@ def sala4():
     pedras = input("\n>")
     
     if "e" in pedras.lower:
-        minSorte = 7
-        maxSorte = 80
-        probabilidade = (random.randint(minSorte, maxSorte))*.50
+        sorte("50")
         
-        if probabilidade > 30:
+        if sorte > 30:
             print("\nConseguiste passar a sala e passas a porta")
             sala6()
             
@@ -229,7 +225,10 @@ def ir_para(local):
         sala9()
 
 
-
+def sorte(valor):
+    sortemin = 1
+    sortemax = 100
+    sorte = (random.randint(sortemin, sortemax))*valor
 
 
 
