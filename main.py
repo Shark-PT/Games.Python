@@ -61,7 +61,7 @@ def sala_ogre():
     resposta = input(">")
     
     if resposta == "1":
-        monstro("Ogre","sala3")
+        monstro("Ogre","sala3", "60", "75", "90")
     
     else:
         sortemin = 1
@@ -86,15 +86,15 @@ def sala3():
     resposta = input(">")
     
     if "s" in resposta.lower():
-        print("Apanhaste as moedas do chão e ficaste com 5 moedas de ouro.")
-        print("Olhas em frente e vês que tem dois caminhos.")
+        print("\nApanhaste as moedas do chão e ficaste com 5 moedas de ouro.")
+        print("inspecionas melhor a sala e vês que tem dois caminhos.")
         print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
         inventario.append("Moedas de Ouro")
         caminho = input(">")
         
         
     else:
-        print("Ignoras as moedas e olhas em frente e vês que tem dois caminhos.")
+        print("\nIgnoras as moedas e olhas em frente e vês que tem dois caminhos.")
         print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
         caminho = input(">")
         
@@ -104,21 +104,97 @@ def sala3():
     else:
         sala5()
             
-def monstro(monstro, local):
+ 
+def sala3():
+    print("\nConseguiste ultrapassar o Ogre e passaste para uma sala nova.")
+    print("Olhas para o chão e vês moedas de ouro espalhadas")
+    print("Achas estranho, mas vais querer apanha-las?(sim/não)")
+    resposta = input(">")
+    
+    if "s" in resposta.lower():
+        print("\nApanhaste as moedas do chão e ficaste com 5 moedas de ouro.")
+        print("Olhas em frente e vês que tem dois caminhos.")
+        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
+        inventario.append("Moedas de Ouro")
+        caminho = input(">")
+        
+        
+    else:
+        print("\nIgnoras as moedas e olhas em frente e vês que tem dois caminhos.")
+        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
+        caminho = input(">")
+        
+    if "d" in caminho.lower():
+        sala4()
+        
+    else:
+        sala5()
+        
+        
+def sala4():
+    print("\nEntras numa sala iluminada com tochas e pensas o que haverá nesta sala")
+    print("olhas para o chão e vês que algumas pedras são mais escuras e que há uma porta no fim.")
+    print("tentas atravessar a sala pisando as pedras escuras ou claras?")
+    pedras = input("\n>")
+    
+    if "e" in pedras.lower:
+        minSorte = 7
+        maxSorte = 80
+        probabilidade = (random.randint(minSorte, maxSorte))*.50
+        
+        if probabilidade > 30:
+            print("\nConseguiste passar a sala e passas a porta")
+            sala6()
+            
+        else:
+            game_over("\nO Chão cedeu e tu cais num abismo sem fundo.")
+            
+    
+def sala5():
+    print("\nOlhas para a sala e sentes-la perfumada")
+    print("Achas isso muito estranho e fora do contexto, mas ignoras.")
+    print("De cada lado da sala tens duas portas. Para qual vais?")
+    print("Esquerda/Direita?)")
+    portas = input(">")
+    if "d" in portas.lower():
+        print("entras numa sala nova")
+        sala8()
+            
+            
+    else:
+        sala7()
+
+
+def sala6():
+    
+    print("continua")
+    
+def sala7():
+    print("Continua")
+    
+def sala8():
+    print("\nEntraste no que parece ser um mini coliseu subterraneo")
+    print("Tens um Urso a mostrar-te os dentes e vais ter que lutar contra ele")
+    monstro("Urso","sala9", "10", "50", "80")
+    
+def sala9():
+    print("contnua")    
+    
+def monstro(monstro, local, prob1, prob2, prob3):
     print("***--- Estás numa luta contra um " + monstro)
     print(". Tu vais?: ---***")
     print("***--- A: Ver o inventario ")
-    print("***--- B: Dar-lhe um soco? Sucesso: 85%")
-    print("***--- C: Dar-lhe um pontapé? Sucesso: 75%")
-    print("***--- D: Usar uma arma do inventario? Sucesso: 95%")
+    print("***--- B: Dar-lhe um soco? Sucesso:" + prob1 + "%")
+    print("***--- C: Dar-lhe um pontapé? Sucesso:" + prob2 + "%")
+    print("***--- D: Usar uma arma do inventario? Sucesso: " + prob3 +"%")
     decision= input("O que vais escolher: A,B,C ou D?")
         
     minPoint=1
     maxPoint=100
         
-    ChB = (random.randint(minPoint, maxPoint))*.85
-    ChC = (random.randint(minPoint, maxPoint))*.75
-    ChD = (random.randint(minPoint, maxPoint))*.95
+    ChB = (random.randint(minPoint, maxPoint))*prob1
+    ChC = (random.randint(minPoint, maxPoint))*prob2
+    ChD = (random.randint(minPoint, maxPoint))*prob3
     
     if "a" in decision.lower():
                 for x in inventario:
@@ -148,43 +224,15 @@ def monstro(monstro, local):
         
 def ir_para(local):
     if (local == "sala3"):
-        sala3()    
-        
+        sala3()
+    elif (local == "sala9"):
+        sala9()
 
 
 
-def sala3():
-    print("\nConseguiste ultrapassar o Ogre e passaste para uma sala nova.")
-    print("Olhas para o chão e vês moedas de ouro espalhadas")
-    print("Achas estranho, mas vais querer apanha-las?(sim/não)")
-    resposta = input(">")
-    
-    if "s" in resposta.lower():
-        print("Apanhaste as moedas do chão e ficaste com 5 moedas de ouro.")
-        print("Olhas em frente e vês que tem dois caminhos.")
-        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
-        inventario.append("Moedas de Ouro")
-        caminho = input(">")
-        
-        
-    else:
-        print("Ignoras as moedas e olhas em frente e vês que tem dois caminhos.")
-        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
-        caminho = input(">")
-        
-    if "d" in caminho.lower():
-        sala4()
-        
-    else:
-        sala5()
-        
-        
-def sala4():
-    print("Ipsum TODO")
-    
-def sala5():
-    print("IPsum TODO")
-        
+
+
+
 
 def game_over(reason):
     print("\n" + reason)
