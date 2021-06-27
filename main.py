@@ -64,13 +64,13 @@ def sala_ogre():
         monstro("Ogre","sala3", "60", "75", "90")
     
     else:
-        sorte("60")
+        valor = sorte("60")
         
-        if sorte > 60:
+        if valor > 60:
             print("\nTu conseguiste passar pelo ogre a dormir")
             ir_para("sala3")
             
-        elif sorte > 25 and sorte < 60:
+        elif valor > 25 and sorte < 60:
             print("\nEle acordou e vais ter que lutar com ele")
             monstro("Ogre", "sala3")
             
@@ -162,7 +162,6 @@ def sala5():
 
 
 def sala6():
-    
     print("continua")
     
 def sala7():
@@ -228,7 +227,9 @@ def ir_para(local):
 def sorte(valor):
     sortemin = 1
     sortemax = 100
-    sorte = (random.randint(sortemin, sortemax))*valor
+    resultado = (random.randint(sortemin, sortemax))*valor
+    return sorte
+     
 
 
 
