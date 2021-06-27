@@ -1,6 +1,6 @@
 import random
-from funcao_luta import monstro
-
+#from funcao_luta import monstro
+#from ir_para import ir_para
 
 inventario = []
 
@@ -64,8 +64,8 @@ def sala_ogre():
         monstro("Ogre","sala3", "60", "75", "90")
     
     else:
-        valor = sorte("60")
-        
+        sorte(60)
+        valor = sorte(60)
         if valor > 60:
             print("\nTu conseguiste passar pelo ogre a dormir")
             ir_para("sala3")
@@ -228,7 +228,7 @@ def sorte(valor):
     sortemin = 1
     sortemax = 100
     resultado = (random.randint(sortemin, sortemax))*valor
-    return sorte
+    return resultado
      
 
 
