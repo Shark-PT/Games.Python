@@ -72,7 +72,7 @@ def sala_ogre():
             
         elif valor > 25 and sorte < 60:
             print("\nEle acordou e vais ter que lutar com ele")
-            monstro("Ogre", "sala3")
+            monstro("Ogre", "sala3", "60", "75", "90")
             
         else:
             game_over("\nO Ogre acordou e atacou-te pelas costas. Nunca tiveste hipotese")
@@ -86,7 +86,7 @@ def sala3():
     if "s" in resposta.lower():
         print("\nApanhaste as moedas do chão e ficaste com 5 moedas de ouro.")
         print("inspecionas melhor a sala e vês que tem dois caminhos.")
-        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
+        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita)")
         inventario.append("Moedas de Ouro")
         caminho = input(">")
         
@@ -186,10 +186,13 @@ def monstro(monstro, local, prob1, prob2, prob3):
         
     minPoint=1
     maxPoint=100
+    p1 = int(prob1)
+    p2 = int(prob2)
+    p3 = int(prob3)
         
-    ChB = (random.randint(minPoint, maxPoint))*prob1
-    ChC = (random.randint(minPoint, maxPoint))*prob2
-    ChD = (random.randint(minPoint, maxPoint))*prob3
+    ChB = (random.randint(minPoint, maxPoint))*p1
+    ChC = (random.randint(minPoint, maxPoint))*p2
+    ChD = (random.randint(minPoint, maxPoint))*p3
     
     if "a" in decision.lower():
                 for x in inventario:
