@@ -64,11 +64,11 @@ def sala_ogre():
     
     elif resposta == "2":
         valor = sorte(60)
-        if valor > 60:
+        if valor > 75:
             print("\nTu conseguiste passar pelo ogre a dormir")
             ir_para("sala3")
             
-        elif valor > 25 and sorte < 60:
+        elif valor > 25 and valor < 60:
             print("\nEle acordou e vais ter que lutar com ele")
             monstro("Ogre", "sala3", 60, 75, 90)
             
@@ -137,9 +137,9 @@ def sala4():
     pedras = input("\n>")
     
     
-    if "esc" in pedras.lower:
+    if "esc" in pedras.lower():
         valor = sorte(50)
-        if valor > 30:
+        if valor > 75:
             print("\nConseguiste passar a sala e passas a porta")
             sala6()
             
@@ -172,7 +172,7 @@ def sala7():
 def sala8():
     print("\nEntraste no que parece ser um mini coliseu subterraneo")
     print("Tens um Urso a mostrar-te os dentes e vais ter que lutar contra ele")
-    monstro("Urso","sala9", "10", "50", "80")
+    monstro("Urso","sala9", 10, 50, 80)
     
 def sala9():
     print("contnua")    
