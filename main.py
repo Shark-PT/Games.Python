@@ -1,7 +1,7 @@
 import random
 from colorama import init, Fore, Back, Style
 from termcolor import colored
-from funcao_jogo import *
+
 
 inventario = []
 init(autoreset=True)
@@ -81,8 +81,7 @@ def sala_ogre():
             game_over("\nO Ogre acordou e atacou-te pelas costas. Nunca tiveste hipotese")
     else:
         print("Opção errada, escolha uma das opções disponiveis")
-    
-        
+
 def sala3():
     print("\nConseguiste ultrapassar o Ogre e passaste para uma sala nova.")
     print("Olhas para o chão e vês moedas de ouro espalhadas")
@@ -155,8 +154,10 @@ def sala8():
     
 def sala9():
     print("contnua")    
+        
+
     
-"""
+
 def monstro(monstro, local, prob1, prob2, prob3):
     print("***--- Estás numa luta contra um " + monstro)
     print(". Tu vais?: ---***")
@@ -237,7 +238,7 @@ def play_again():
         print(Back.RED + "ADEUS")
         #print(Style.RESET_ALL)
         exit()
-"""        
+       
         
         
 intro()

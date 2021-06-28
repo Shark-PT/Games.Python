@@ -1,5 +1,6 @@
 import random
 from main import *
+from salas import *
 
 
 def monstro(monstro, local, prob1, prob2, prob3):
