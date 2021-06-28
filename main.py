@@ -1,14 +1,19 @@
 import random
-
+from colorama import init, Fore, Back, Style
+from termcolor import colored
+#from funcao_jogo import sorte, game_over, monstro, ir_para
 
 inventario = []
-
+init(autoreset=True)
 
 def intro():
     
-    print(" Bem Vindo á MASMORRA DA MORTE")
-    print("\nComo the chamas?")
+    print("\033[31m" + " Bem Vindo á MASMORRA DA MORTE")
+    #print('\033[39m')
+    print("")
+    print(colored("Como the chamas?", "red", "on_blue"))
     nome = input(">")
+    
     print("Bem vindo, ", nome)
     print("\nNa tua frente tens uns portões ferruguentos que aparentam ter centenas de anos desde que foram abertos")
     print("que misterios, lendas, monstros e tesouros se escondem lá dentro")
@@ -47,7 +52,7 @@ def entrada_principal():
             sala_ogre()
             
         elif "e" in cruzamento:
-            print("CONTINUA")
+            sala8()
             
             
                 
@@ -199,7 +204,11 @@ def monstro(monstro, local, prob1, prob2, prob3):
     
     if "a" in decision.lower():
                 for x in inventario:
-                    print(x) 
+                    print(x)
+                    print("***--- B: Dar-lhe um soco? Sucesso:  {xpto}  %".format(xpto = prob1))
+                    print("***--- C: Dar-lhe um pontapé? Sucesso:  {foo}  %".format(foo = prob2))
+                    print("***--- D: Usar uma arma do inventario? Sucesso:   {boo} %".format(boo = prob3))
+                    decision= input("O que vais escolher: B,C ou D?") 
     
     if decision.upper() == "B" and ChB > 25:
         print("\nTu decidiste dar-lhe um soco")
@@ -254,7 +263,8 @@ def play_again():
         intro()
     
     else:
-        print("ADEUS")
+        print(Back.RED + "ADEUS")
+        #print(Style.RESET_ALL)
         exit()
         
         
