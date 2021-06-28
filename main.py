@@ -1,6 +1,5 @@
 import random
-#from funcao_luta import monstro
-#from ir_para import ir_para
+
 
 inventario = []
 
@@ -61,9 +60,9 @@ def sala_ogre():
     resposta = input(">")
     
     if resposta == "1":
-        monstro("Ogre","sala3", "60", "75", "90")
+        monstro("Ogre","sala3", 60, 75, 90)
     
-    else:
+    elif resposta == "2":
         sorte(60)
         valor = sorte(60)
         if valor > 60:
@@ -72,10 +71,13 @@ def sala_ogre():
             
         elif valor > 25 and sorte < 60:
             print("\nEle acordou e vais ter que lutar com ele")
-            monstro("Ogre", "sala3", "60", "75", "90")
+            monstro("Ogre", "sala3", 60, 75, 90)
             
         else:
             game_over("\nO Ogre acordou e atacou-te pelas costas. Nunca tiveste hipotese")
+    else:
+        print("Opção errada, escolha uma das opções disponiveis")
+    
         
 def sala3():
     print("\nConseguiste ultrapassar o Ogre e passaste para uma sala nova.")
@@ -135,10 +137,10 @@ def sala4():
     print("tentas atravessar a sala pisando as pedras escuras ou claras?")
     pedras = input("\n>")
     
-    if "e" in pedras.lower:
-        sorte("50")
-        
-        if sorte > 30:
+    if "esc" in pedras.lower:
+        sorte(50)
+        valor = sorte(50)
+        if valor > 30:
             print("\nConseguiste passar a sala e passas a porta")
             sala6()
             
@@ -153,7 +155,7 @@ def sala5():
     print("Esquerda/Direita?)")
     portas = input(">")
     if "d" in portas.lower():
-        print("entras numa sala nova")
+        print("\nentras numa sala nova")
         sala8()
             
             
@@ -179,20 +181,21 @@ def monstro(monstro, local, prob1, prob2, prob3):
     print("***--- Estás numa luta contra um " + monstro)
     print(". Tu vais?: ---***")
     print("***--- A: Ver o inventario ")
-    print("***--- B: Dar-lhe um soco? Sucesso:" + prob1 + "%")
-    print("***--- C: Dar-lhe um pontapé? Sucesso:" + prob2 + "%")
-    print("***--- D: Usar uma arma do inventario? Sucesso: " + prob3 +"%")
+    print("***--- B: Dar-lhe um soco? Sucesso:  {xpto}  %".format(xpto = prob1))
+    print("***--- C: Dar-lhe um pontapé? Sucesso:  {foo}  %".format(foo = prob2))
+    print("***--- D: Usar uma arma do inventario? Sucesso:   {boo} %".format(boo = prob3))
     decision= input("O que vais escolher: A,B,C ou D?")
         
     minPoint=1
     maxPoint=100
+    """
     p1 = int(prob1)
     p2 = int(prob2)
     p3 = int(prob3)
-        
-    ChB = (random.randint(minPoint, maxPoint))*p1
-    ChC = (random.randint(minPoint, maxPoint))*p2
-    ChD = (random.randint(minPoint, maxPoint))*p3
+    """    
+    ChB = (random.randint(minPoint, maxPoint))*prob1
+    ChC = (random.randint(minPoint, maxPoint))*prob2
+    ChD = (random.randint(minPoint, maxPoint))*prob3
     
     if "a" in decision.lower():
                 for x in inventario:
