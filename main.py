@@ -1,7 +1,7 @@
 import random
 from colorama import init, Fore, Back, Style
 from termcolor import colored
-#from funcao_jogo import sorte, game_over, monstro, ir_para
+from funcao_jogo import *
 
 inventario = []
 init(autoreset=True)
@@ -109,32 +109,6 @@ def sala3():
         sala5()
             
  
-def sala3():
-    print("\nConseguiste ultrapassar o Ogre e passaste para uma sala nova.")
-    print("Olhas para o chão e vês moedas de ouro espalhadas")
-    print("Achas estranho, mas vais querer apanha-las?(sim/não)")
-    resposta = input(">")
-    
-    if "s" in resposta.lower():
-        print("\nApanhaste as moedas do chão e ficaste com 5 moedas de ouro.")
-        print("Olhas em frente e vês que tem dois caminhos.")
-        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
-        inventario.append("Moedas de Ouro")
-        caminho = input(">")
-        
-        
-    else:
-        print("\nIgnoras as moedas e olhas em frente e vês que tem dois caminhos.")
-        print("Vais querer ir para a esquerda ou direita? (Esquerda/direita")
-        caminho = input(">")
-        
-    if "d" in caminho.lower():
-        sala4()
-        
-    else:
-        sala5()
-        
-        
 def sala4():
     print("\nEntras numa sala iluminada com tochas e pensas o que haverá nesta sala")
     print("olhas para o chão e vês que algumas pedras são mais escuras e que há uma porta no fim.")
@@ -182,6 +156,7 @@ def sala8():
 def sala9():
     print("contnua")    
     
+"""
 def monstro(monstro, local, prob1, prob2, prob3):
     print("***--- Estás numa luta contra um " + monstro)
     print(". Tu vais?: ---***")
@@ -193,11 +168,7 @@ def monstro(monstro, local, prob1, prob2, prob3):
         
     minPoint=1
     maxPoint=100
-    """
-    p1 = int(prob1)
-    p2 = int(prob2)
-    p3 = int(prob3)
-    """    
+       
     ChB = (random.randint(minPoint, maxPoint))*prob1
     ChC = (random.randint(minPoint, maxPoint))*prob2
     ChD = (random.randint(minPoint, maxPoint))*prob3
@@ -266,7 +237,7 @@ def play_again():
         print(Back.RED + "ADEUS")
         #print(Style.RESET_ALL)
         exit()
-        
+"""        
         
         
 intro()

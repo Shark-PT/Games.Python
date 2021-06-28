@@ -1,31 +1,26 @@
 import random
-from main import inventario, intro, sala3, sala9
+from main import *
 
-
-def sorte(valor):
-    sortemin = 1
-    sortemax = 100
-    resultado = (random.randint(sortemin, sortemax))*valor
-    return resultado
 
 def monstro(monstro, local, prob1, prob2, prob3):
     print("***--- Estás numa luta contra um " + monstro)
     print(". Tu vais?: ---***")
     print("***--- A: Ver o inventario ")
-    print("***--- B: Dar-lhe um soco? Sucesso:" + prob1 + "%")
-    print("***--- C: Dar-lhe um pontapé? Sucesso:" + prob2 + "%")
-    print("***--- D: Usar uma arma do inventario? Sucesso: " + prob3 +"%")
+    print("***--- B: Dar-lhe um soco? Sucesso:  {xpto}  %".format(xpto = prob1))
+    print("***--- C: Dar-lhe um pontapé? Sucesso:  {foo}  %".format(foo = prob2))
+    print("***--- D: Usar uma arma do inventario? Sucesso:   {boo} %".format(boo = prob3))
     decision= input("O que vais escolher: A,B,C ou D?")
         
     minPoint=1
     maxPoint=100
+    """
     p1 = int(prob1)
     p2 = int(prob2)
     p3 = int(prob3)
-        
-    ChB = (random.randint(minPoint, maxPoint))*p1
-    ChC = (random.randint(minPoint, maxPoint))*p2
-    ChD = (random.randint(minPoint, maxPoint))*p3
+    """    
+    ChB = (random.randint(minPoint, maxPoint))*prob1
+    ChC = (random.randint(minPoint, maxPoint))*prob2
+    ChD = (random.randint(minPoint, maxPoint))*prob3
     
     if "a" in decision.lower():
                 for x in inventario:
@@ -60,7 +55,11 @@ def ir_para(local):
         sala9()
 
 
-
+def sorte(valor):
+    sortemin = 1
+    sortemax = 100
+    resultado = (random.randint(sortemin, sortemax))*valor
+    return resultado
      
 
 
