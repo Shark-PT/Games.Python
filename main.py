@@ -48,10 +48,10 @@ def entrada_principal():
             cruzamento = input(">")
             
         
-        if "d" in cruzamento:
+        if "e" in cruzamento:
             sala_ogre()
             
-        elif "e" in cruzamento:
+        elif "d" in cruzamento:
             sala8()
             
             
@@ -68,7 +68,7 @@ def sala_ogre():
         monstro("Ogre","sala3", 60, 75, 90)
     
     elif resposta == "2":
-        valor = sorte(60)
+        valor = sorte()
         if valor > 75:
             print("\nTu conseguiste passar pelo ogre a dormir")
             ir_para("sala3")
@@ -115,15 +115,17 @@ def sala4():
     pedras = input("\n>")
     
     
-    if "esc" in pedras.lower():
-        valor = sorte(50)
-        if valor > 75:
+    if "e" in pedras.lower():
+        valor = sorte()
+        if valor > 50:
             print("\nConseguiste passar a sala e passas a porta")
             sala6()
             
         else:
             game_over("\nO Chão cedeu e tu cais num abismo sem fundo.")
-            
+    else:
+        game_over("\nO Chão cedeu e tu cais num abismo sem fundo.")
+                
     
 def sala5():
     print("\nOlhas para a sala e sentes-la perfumada")
@@ -136,14 +138,22 @@ def sala5():
         print("\nentras numa sala nova")
         sala8()
             
-            
+    elif "e" in portas.lower():
+        sala7()        
     else:
-        sala7()
+        game_over("Opção errada, demoraste muito tempo e com isso o tecto caiu, esmagando-te")
 
 
 def sala6():
-    print("continua")
-    
+    print("encontras um bau, queres abri-lo?(sim/não)")
+    bau = input(">")
+    if "s" in bau.lower():
+        print("Encontras-te uma espada")
+        inventario.append("espada") 
+    else:
+        print("Avanças para a prozxima sala")
+        sala10()
+               
 def sala7():
     print("Continua")
     
@@ -153,8 +163,17 @@ def sala8():
     monstro("Urso","sala9", 10, 50, 80)
     
 def sala9():
-    print("contnua")    
-        
+    print("contnua")   
+    
+def sala10():
+    print("Continua")
+
+
+def sala11():
+    print("Continua")
+    
+def sala12():
+    print("Continua")        
 
     
 
@@ -194,8 +213,8 @@ def monstro(monstro, local, prob1, prob2, prob3):
         ir_para(local)
         
             
-    elif decision.upper() == "D" and ChD > 25 and "adaga" in inventario:
-        print("\nTu usaste a Adaga")
+    elif decision.upper() == "D" and ChD > 25 and "adaga" or "espada" in inventario:
+        print("\nTu usaste a arma")
         print("Deste-lhe uma enorme coça")
         ir_para(local)
         
@@ -211,10 +230,10 @@ def ir_para(local):
         sala9()
 
 
-def sorte(valor):
+def sorte():
     sortemin = 1
     sortemax = 100
-    resultado = (random.randint(sortemin, sortemax))*valor
+    resultado = (random.randint(sortemin, sortemax))
     return resultado
      
 
